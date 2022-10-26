@@ -58,7 +58,7 @@ body {
           .planets-container .planet-index .route .planet-container .planet.first {
             animation: firstPlanetRender 12s infinite linear; }
             .planets-container .planet-index .route .planet-container .planet.first:after {
-              background-color: #25258d; }
+              animation: firstPlanetRotater 12s infinite linear; }
           .planets-container .planet-index .route .planet-container .planet.second {
             background-color: red; }
           .planets-container .planet-index .route .planet-container .planet.third {
@@ -128,3 +128,23 @@ body {
     background: linear-gradient(-90deg, #5656fd 50%, #3c3caf 50%); }
   100% {
     background: linear-gradient(-90deg, #5656fd 50%, #3c3caf 50%); } }
+
+@keyframes firstPlanetRotater {
+  0% {
+    transform: scaleX(-0.2);
+    background-color: #5656fd; }
+  12% {
+    transform: scaleX(-1);
+    background-color: #5656fd; }
+  12.1% {
+    transform: scaleX(1);
+    background-color: #5656fd; }
+  62% {
+    transform: scaleX(-1);
+    background-color: #3c3caf; }
+  62.1% {
+    transform: scaleX(1);
+    background-color: #3c3caf; }
+  100% {
+    transform: scaleX(-0.2);
+    background-color: #5656fd; } }

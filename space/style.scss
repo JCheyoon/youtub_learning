@@ -74,7 +74,7 @@ body {
           &.first {
             animation: firstPlanetRender 12s infinite linear;
             &:after {
-              background-color: #25258d;
+              animation: firstPlanetRotater 12s infinite linear;
             }
           }
 
@@ -208,5 +208,32 @@ body {
       rgb(86, 86, 253) 50%,
       rgb(60, 60, 175) 50%
     );
+  }
+}
+
+@keyframes firstPlanetRotater {
+  0% {
+    transform: scaleX(-0.2);
+    background-color: rgb(86, 86, 253);
+  }
+  12% {
+    transform: scaleX(-1);
+    background-color: rgb(86, 86, 253);
+  }
+  12.1% {
+    transform: scaleX(1);
+    background-color: rgb(86, 86, 253);
+  }
+  62% {
+    transform: scaleX(-1);
+    background-color: rgb(60, 60, 175);
+  }
+  62.1% {
+    transform: scaleX(1);
+    background-color: rgb(60, 60, 175);
+  }
+  100% {
+    transform: scaleX(-0.2);
+    background-color: rgb(86, 86, 253);
   }
 }
