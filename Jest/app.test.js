@@ -1,4 +1,4 @@
-const fn = require('./app')
+const fn = require("./app");
 
 /*
 test("1 is 1",() => {
@@ -46,32 +46,74 @@ test("Not empty string is truth",() => {
   expect(fn.add("HELLO","WORLD")).toBeTruthy()
 })
 
- */
 
-test("ID must be less than 10 letters ",() => {
-  const id ="THE_ORANGE"
-  expect(id.length).toBeLessThanOrEqual(10)
-})
+
+test("ID must be less than 10 letters ", () => {
+  const id = "THE_ORANGE";
+  expect(id.length).toBeLessThanOrEqual(10);
+});
 
 //ERROR floating number
-test("0.1+0.2 =0.3 ",() => {
-  expect(fn.add(0.1,0.2)).toBe(0.3)
-})
+test("0.1+0.2 =0.3 ", () => {
+  expect(fn.add(0.1, 0.2)).toBe(0.3);
+});
 
-test("0.1+0.2 =0.3 ",() => {
-  expect(fn.add(0.1,0.2)).toBeCloseTo(0.3)
-})
+test("0.1+0.2 =0.3 ", () => {
+  expect(fn.add(0.1, 0.2)).toBeCloseTo(0.3);
+});
 
 //with Regular Expressions
-test("Hello world has 'e' ",() => {
-  expect("Hello world").toMatch(/e/)
-})
+test("Hello world has 'e' ", () => {
+  expect("Hello world").toMatch(/e/);
+});
 
-test("Userlist has 'peti'? ",() => {
-  const user ="peti"
-  const userList=["cheyoon","peti","spider"]
-  expect(userList).toContain(user)
-})
+test("Userlist has 'peti'? ", () => {
+  const user = "peti";
+  const userList = ["cheyoon", "peti", "spider"];
+  expect(userList).toContain(user);
+});
 
-test("Error expected ",() => {
-  expect(() => fn.throwError()).toThrow("ERROR")})
+
+
+test("Error expected ", () => {
+  expect(() => fn.throwError()).toThrow("ERROR");
+});
+
+
+test("after 3sec get a name peti ", (done) => {
+  function callback(name) {
+    try {
+      expect(name).toBe("peti");
+      done();
+    } catch (error) {
+      done(error);
+    }
+  }
+  fn.getName(callback);
+});
+
+test("after 3sec get a age", () => {
+  return expect(fn.getAge()).resolve.toBe(30);
+});
+ */
+
+let num = 0;
+
+beforeEach(() => {
+  num = 0;
+});
+
+test("0 + 1 = 1", () => {
+  num = fn.add(num, 1);
+  expect(num).toBe(1);
+});
+
+test("0 + 2 = 2", () => {
+  num = fn.add(num, 2);
+  expect(num).toBe(2);
+});
+
+test("0 + 3 = 3", () => {
+  num = fn.add(num, 3);
+  expect(num).toBe(3);
+});
